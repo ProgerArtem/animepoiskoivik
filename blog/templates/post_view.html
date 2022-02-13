@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class = "row">
+            <div class = "col s100 m100 l100">
+                
+                <div class="blue">
+                    <span text-align="center" display="block">
+                        <img class="center-align responsive-img" src ='/{{ post.img }}'>
+                    </span>
+                    <h3 class="center-align">{{post.title}}</h3>
+                    <p class ="center-align flow-text"> 
+                        <span class="black-text">
+                        {{post.text}}
+                        </span>
+                    </p>
+                </div>
+            </div>
+            {% include "sidebar.html" %}
+        </div>
+    </div>
+    
+
+{% endblock %}

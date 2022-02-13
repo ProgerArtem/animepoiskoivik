@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+            <div class="col s12 m5 l5">
+                <div class="card hoverable large indigo lighten-3">
+                    <div class="card-image">
+                        <img src ='/{{ post.img }}'>
+                        <span class="card-title red accent-3">{{ post.title|upper }}</span>
+                      </div>
+                      <div class="card-content cyan-text text-darken-4">
+                        <p>{{ post.text|linebreaksbr|truncatechars:100 }}</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="/{{ post.post_slug }}">Дивитись далі...</a>
+                      </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% include "sidebar.html" %}
+          </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="row">
+                    <p class="red-text">{{field.errors}}</p>
+                    <p class="black-text">{{field.label_tag}}</p>
+                    <div class="input-field col s12">
+                        {{field}}
+                        <span class="helper-text"> {{field.helper_text}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+            <button class="btn waves-effect waves-light" type="submit">Зареєструватися 
+            <i class="material-icons">add</i></button>
+        </form>
+        <p>Якщо ви вже маєте аккаунт то <a href="/login"><strong>залогіньтесь</strong>
+        </a></p>
+    </div>
+    
+    {% endblock %}
